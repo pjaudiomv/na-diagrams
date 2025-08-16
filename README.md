@@ -21,11 +21,11 @@ flowchart TD
 %% Fund flow through hierarchy
     AREA -->|Funnel for metro services| METRO
     METRO -->|Return excess funds| AREA
-    AREA -->|Donate excess funds| REGION
-    AREA -->|Donate excess funds| WORLD
-    REGION -->|Donate excess funds| ZONE
-    REGION -->|Donate excess funds| WORLD
-    ZONE -->|Donate excess funds| WORLD
+    AREA -->|Contribute excess funds| REGION
+    AREA -->|Contribute excess funds| WORLD
+    REGION -->|Contribute excess funds| ZONE
+    REGION -->|Contribute excess funds| WORLD
+    ZONE -->|Contribute excess funds| WORLD
     
 %% Styling
     classDef groupStyle fill:#e1f5fe,stroke:#01579b,color:#000,stroke-width:2px
