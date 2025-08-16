@@ -2,7 +2,7 @@
 
 ### Fund Flow
 
-```mermaidjs
+```mermaid
 flowchart TD
     GROUP[GROUP]
     AREA[AREA]
