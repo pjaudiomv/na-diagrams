@@ -1,5 +1,128 @@
 # Diagrams
 
+### Service Structure Diagram
+
+```mermaid
+flowchart TD
+    %% Groups level
+    G1[Group]
+    G2[Group]
+    G3[Group]
+    G4[Group]
+    G5[Group]
+    G6[Group]
+    G7[Group]
+    G8[Group]
+    G9[Group]
+    G10[Group]
+    G11[Group]
+    G12[Group]
+    
+    %% Local Service level
+    GSF[Group Support Forum GSF]
+    LSC[Local Service Conference LSC]
+    MSC1[Metropolitan Service Committee MSC]
+    MSC2[Metropolitan Service Committee MSC]
+    
+    %% Area Service Committees
+    ASC1[Area Service Committee ASC]
+    ASC2[Area Service Committee ASC]
+    ASC3[Area Service Committee ASC]
+    ASC4[Area Service Committee ASC]
+    
+    %% Regional Service Committees
+    RSC1[Regional Service Committee RSC]
+    RSC2[Regional Service Committee RSC]
+    RSC3[Regional Service Committee RSC]
+    RSC4[Regional Service Committee RSC]
+    
+    %% Regional Assembly
+    RA[Regional Assembly]
+    
+    %% Zonal level
+    ZF1[Zonal Forum]
+    ZF2[Zonal Forum]
+    
+    %% World Service Conference
+    WSC[World Service Conference WSC]
+    
+    %% World Services
+    WB[World Board]
+    EC[Executive Committee]
+    WG[Workgroups or Committees]
+    HRP[Human Resource Panel]
+    WP[World Pool]
+    WSO[World Service Office]
+    
+    %% Groups to Local Services
+    G1 -->|GSR| GSF
+    G2 -->|GSR| GSF
+    G3 -->|GSR| GSF
+    G4 -->|GSR| LSC
+    G5 -->|GSR| MSC1
+    G6 -->|GSR| MSC1
+    G7 -->|GSR| ASC1
+    G8 -->|GSR| ASC2
+    G9 -->|GSR| ASC3
+    G10 -->|GSR| ASC4
+    G11 -->|GSR| MSC2
+    G12 -->|GSR| MSC2
+    
+    %% Local to Area
+    GSF --> ASC1
+    LSC -->|RCM| RSC1
+    MSC1 --> ASC2
+    MSC2 --> ASC3
+    
+    %% Area to Regional
+    ASC1 -->|RCM| RSC1
+    ASC2 -->|RCM| RSC2
+    ASC3 -->|RCM| RSC3
+    ASC4 -->|RCM| RSC4
+    
+    %% Regional Assembly connection
+    RSC2 --> RA
+    
+    %% Regional to Zonal
+    RSC1 -->|Regional Delegate| ZF1
+    RSC2 -->|Regional Delegate| ZF1
+    RSC3 -->|Regional Delegate| ZF2
+    RSC4 -->|Regional Delegate| ZF2
+    
+    %% Zonal to World Service Conference
+    ZF1 -->|Zonal Delegate| WSC
+    ZF2 -->|Zonal Delegate| WSC
+    
+    %% World Service Conference oversight
+    WSC --> WB
+    WSC --> HRP
+    
+    %% World Board services
+    WB --> EC
+    WB --> WG
+    WB --> WSO
+    HRP --> WP
+    
+    %% Styling
+    classDef groupStyle fill:#4a90e2,stroke:#2171b5,stroke-width:2px,color:#fff
+    classDef localStyle fill:#5cb85c,stroke:#449d44,stroke-width:2px,color:#fff
+    classDef areaStyle fill:#5cb85c,stroke:#449d44,stroke-width:2px,color:#fff
+    classDef regionalStyle fill:#f0ad4e,stroke:#ec971f,stroke-width:2px,color:#fff
+    classDef zonalStyle fill:#f7e835,stroke:#f0d000,stroke-width:2px,color:#000
+    classDef worldStyle fill:#d9534f,stroke:#c9302c,stroke-width:3px,color:#fff
+    classDef serviceStyle fill:#9b59b6,stroke:#8e44ad,stroke-width:2px,color:#fff
+    classDef poolStyle fill:#1abc9c,stroke:#16a085,stroke-width:2px,color:#fff
+    
+    class G1,G2,G3,G4,G5,G6,G7,G8,G9,G10,G11,G12 groupStyle
+    class GSF,LSC,MSC1,MSC2 localStyle
+    class ASC1,ASC2,ASC3,ASC4 areaStyle
+    class RSC1,RSC2,RSC3,RSC4,RA regionalStyle
+    class ZF1,ZF2 zonalStyle
+    class WSC worldStyle
+    class WB,EC,WG,WSO serviceStyle
+    class HRP,WP poolStyle
+```
+
 ### Fund Flow
 
 ```mermaid
