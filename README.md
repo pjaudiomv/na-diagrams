@@ -123,6 +123,61 @@ flowchart TD
     class HRP,WP poolStyle
 ```
 
+### Translations Process
+
+```mermaid
+flowchart TD
+    START([Start]) --> RESOURCES{Are local resources available?}
+    
+    RESOURCES -->|No| HIRE[Hire a Translator]
+    RESOURCES -->|Yes| LOCAL[Local Translation Committee]
+    
+    HIRE --> WRITE[Write Draft]
+    LOCAL --> WRITE
+    
+    WRITE --> IP1{Is it IP#1/Glossary?}
+    
+    IP1 -->|Yes| STAFF1[Staff reviews & documents]
+    IP1 -->|No| STAFF2[Staff reviews & documents]
+    
+    STAFF1 --> WB_EVAL[World Board & Evaluator]
+    STAFF2 --> LTC_REVIEW[LTC review]
+    
+    WB_EVAL --> STAFF_COMPILE[Staff compiles comments]
+    LTC_REVIEW --> STAFF_COMPILE
+    
+    STAFF_COMPILE --> PROOF[Proofreading]
+    
+    PROOF --> PROOFREADER[Proofreader]
+    
+    PROOFREADER --> ISSUES{Are there issues?}
+    
+    ISSUES -->|Yes| STAFF_COMPILE
+    ISSUES -->|No| TYPESET[Typesetting]
+    
+    TYPESET --> LTC_FINAL[LTC final approval]
+    
+    LTC_FINAL --> STAFF_APPROVAL{Staff Approval}
+    
+    STAFF_APPROVAL -->|No| STAFF_COMPILE
+    STAFF_APPROVAL -->|Yes| QUALITY[Staff quality control]
+    
+    QUALITY --> PRINTER[Goes to printer]
+    
+    %% Styling
+    classDef startStyle fill:#4CAF50,stroke:#45a049,stroke-width:2px,color:#fff
+    classDef processStyle fill:#2196F3,stroke:#1976D2,stroke-width:2px,color:#fff
+    classDef decisionStyle fill:#FF9800,stroke:#F57C00,stroke-width:2px,color:#fff
+    classDef reviewStyle fill:#9C27B0,stroke:#7B1FA2,stroke-width:2px,color:#fff
+    classDef finalStyle fill:#4CAF50,stroke:#45a049,stroke-width:2px,color:#fff
+    
+    class START startStyle
+    class WRITE,HIRE,LOCAL,STAFF_COMPILE,PROOF,PROOFREADER,TYPESET,QUALITY,PRINTER processStyle
+    class RESOURCES,IP1,ISSUES,STAFF_APPROVAL decisionStyle
+    class STAFF1,STAFF2,WB_EVAL,LTC_REVIEW,LTC_FINAL reviewStyle
+    class PRINTER finalStyle
+```
+
 ### Fund Flow
 
 ```mermaid
